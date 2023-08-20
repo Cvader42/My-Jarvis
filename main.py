@@ -34,9 +34,9 @@ from shopping_assistance import search_products, compare_prices, add_to_cart
 from recipe_suggestions import get_recipe_suggestions
 from personal_finance_tracking import get_account_balance, track_expenses, get_investment_performance
 from health_fitness_tracking import track_exercise_routines, suggest_workouts, provide_health_tips
-
 from whisper_asr import transcribe_audio
 
+# Create a recognizer instance
 recognizer = sr.Recognizer()
 
 def execute_command(command):
@@ -108,27 +108,19 @@ def main():
         elif "post to facebook" in user_input:
             message = user_input.replace("post to facebook", "").strip()
             response = post_to_facebook(message)
+        elif "post to instagram" in user_input:
+            message = user_input.replace("post to instagram", "").strip()
+            response = post_to_instagram(message)
+        elif "post to linkedin" in user_input:
+            message = user_input.replace("post to linkedin", "").strip()
+            response = post_to_linkedin(message)
         else:
             response = "I didn't catch that. Can you please repeat?"
-        elif "post to twitter" in user_input:
-          message = user_input.replace("post to twitter", "").strip()
-          response = post_to_twitter(message)
-        elif "post to facebook" in user_input:
-          message = user_input.replace("post to facebook", "").strip()
-          response = post_to_facebook(message)
-        elif "post to instagram" in user_input:
-          message = user_input.replace("post to instagram", "").strip()
-          response = post_to_instagram(message)
-       elif "post to linkedin" in user_input:
-          message = user_input.replace("post to linkedin", "").strip()
-          response = post_to_linkedin(message)
-       elif "translate" in user_input:
-          translated = translate_text(user_input)
-          response = f"Translated: {translated}"
-      elif "speak" in user_input:
+
+        # Speak the response
         speak(response)
-      elif "sentiment" in user_input:
-        sentiment = analyze_sentiment(user_input)
-        response = f"The sentiment is {sentiment}."
 
-
+if __name__ == "__main__":
+    root = tk.Tk()
+    gui = MyGUI(root)
+    root.mainloop()
