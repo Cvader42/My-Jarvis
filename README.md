@@ -1,3 +1,5 @@
+
+## Project Structure
 # My-Jarvis
 
 # Jarvis - Advanced Voice Assistant
@@ -13,15 +15,18 @@ Welcome to Jarvis, your advanced voice assistant! This project aims to create a 
 - **Voice Emulation:** Enjoy natural and expressive responses with advanced text-to-speech.
 - **Customizable:** Extend Jarvis's capabilities by adding your own modules.
 
-## Project Structure
-
 The Jarvis project is organized as follows:
 
 
 ## Getting Started
 
 1. Clone the repository to your local machine.
-2. Set up a virtual environment and install required dependencies:
+
+2.    ```bash
+   git clone https://github.com/Cvader42/My-Jarvis.git
+   cd My-Jarvis
+
+3. Set up a virtual environment and install required dependencies:
 
    ```bash
    pip install -r requirements.txt
