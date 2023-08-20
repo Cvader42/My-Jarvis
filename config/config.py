@@ -33,8 +33,16 @@ NEWS_API_KEY = "your_news_api_key_here"
 # Social Media API Keys
 Twitter_API:
 
+
+# Facebook API Key
 Facebook_API:
 
+# Instagram API Key
 Instagram_API:
 
+# Facebook API Key 
 Linkedin_API:
+
+# Eleven labs API Key
+ELEVEN_LABS_NLP_API_KEY = "YOUR_ELEVEN_LABS_NLP_API_KEY"
+
