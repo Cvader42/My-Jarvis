@@ -21,9 +21,9 @@ The Jarvis project is organized as follows:
 ## Getting Started
 
 1. Clone the repository to your local machine.
-
-2.    ```bash
-   git clone https://github.com/Cvader42/My-Jarvis.git
+    ```bash
+2. git clone https://github.com/Cvader42/My-Jarvis.git
+  
    
    cd My-Jarvis
 
