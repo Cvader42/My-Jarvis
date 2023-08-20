@@ -36,6 +36,11 @@ from personal_finance_tracking import get_account_balance, track_expenses, get_i
 from health_fitness_tracking import track_exercise_routines, suggest_workouts, provide_health_tips
 from whisper_asr import transcribe_audio
 import tool_llm
+from config.config import OPENAI_API_KEY
+import openai
+
+# Set your OpenAI API key
+openai.api_key = OPENAI_API_KEY
 
 # Create a recognizer instance
 recognizer = sr.Recognizer()
@@ -122,6 +127,4 @@ def main():
         speak(response)
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    gui = MyGUI(root)
-    root.mainloop()
+    main()
