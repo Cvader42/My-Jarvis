@@ -25,6 +25,17 @@ class IntentRecognizer:
             "unknown": ["I'm not sure I understand.", "Could you rephrase that?", "I'm still learning."]
         }
 
+    def get_intent(user_input):
+    # ... Existing intent recognition logic ...
+
+    # Check for beat generation command
+    if "generate a beat" in user_input:
+        return "generate_beat"
+
+    # ... Other intent checks ...
+
+    return None
+    
     def preprocess_text(self, text):
         text = text.lower()
         tokens = word_tokenize(text)
