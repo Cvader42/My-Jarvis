@@ -24,6 +24,7 @@ The Jarvis project is organized as follows:
 
 2.    ```bash
    git clone https://github.com/Cvader42/My-Jarvis.git
+   
    cd My-Jarvis
 
 3. Set up a virtual environment and install required dependencies:
