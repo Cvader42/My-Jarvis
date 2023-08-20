@@ -35,6 +35,7 @@ from recipe_suggestions import get_recipe_suggestions
 from personal_finance_tracking import get_account_balance, track_expenses, get_investment_performance
 from health_fitness_tracking import track_exercise_routines, suggest_workouts, provide_health_tips
 from whisper_asr import transcribe_audio
+import tool_llm
 
 # Create a recognizer instance
 recognizer = sr.Recognizer()
