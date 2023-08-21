@@ -4,7 +4,7 @@
 OPENAI_API_KEY = "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"
 
 # Google Custom Search API key
-GOOGLE_CUSTOM_SEARCH_KEY = "your_google_custom_search_key_here"
+GOOGLE_CUSTOM_SEARCH_KEY = "AIzaSyCmEGhy9PqcA7lTbkWXXKRWs7Ple0aqu4E"
 
 # OpenWeatherMap API key
 OPENWEATHERMAP_KEY = "your_openweathermap_key_here"
