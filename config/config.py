@@ -7,18 +7,10 @@ OPENAI_API_KEY = "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"
 GOOGLE_CUSTOM_SEARCH_KEY = "AIzaSyCmEGhy9PqcA7lTbkWXXKRWs7Ple0aqu4E"
 
 # OpenWeatherMap API key
-OPENWEATHERMAP_KEY = "your_openweathermap_key_here"
+OPENWEATHERMAP_KEY = "432fec2fd3ea25b8caf16013d22d786a"
 
 # News API key
 NEWS_API_KEY = "your_news_api_key_here"
-
-# Google Custom search API key
-
-
-# OpenWeatherMap API key
-
-
-# News API Key
 
 
 # Language Translation API Key
