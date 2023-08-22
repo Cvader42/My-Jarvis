@@ -61,6 +61,13 @@ def main():
     dialog_manager = DialogManager()
     reminder_manager = ReminderManager()  # Initialize the ReminderManager
 
+    # Create instances of the models
+    curie_model = Curie()
+    davinci_model = Davinci()
+    functions_model = Functions()
+    llama_model = Llama()
+    retriever_model = Retriever()
+
     while True:
         # Speech Recognition using Whisper ASR
         audio_file_path = listen()
@@ -78,7 +85,7 @@ def main():
         else:
             response = "I'm here to assist you."
 
-          # Advanced Functionality
+        # Advanced Functionality
         if "recipe" in user_input:
             dish_name = user_input.replace("recipe", "").strip()
             suggestions = get_recipe_suggestions(dish_name)
@@ -103,7 +110,8 @@ def main():
             track_exercise_routines(exercise_type, duration)
             response = f"Great job on your {exercise_type} exercise for {duration}!"
         else:
-            response = "I didn't catch that. Can you please repeat?"
+            # Generate response using GPT-3
+            response = generate_gpt_response(user_input)
 
         # Regular Voice Assistant Functionality
         if "exit" in user_input:
