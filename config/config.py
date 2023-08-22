@@ -14,7 +14,7 @@ NEWS_API_KEY = "your_news_api_key_here"
 
 
 # Language Translation API Key
-
+DEEPL_API_KEY = "YOUR_API_KEY"
 
 # Text-to-Speech API Key
 
