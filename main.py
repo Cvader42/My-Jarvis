@@ -39,6 +39,8 @@ import tool_llm
 from config.config import OPENAI_API_KEY
 import openai
 
+
+
 # Set your OpenAI API key
 openai.api_key = OPENAI_API_KEY
 
@@ -76,6 +78,33 @@ def main():
             response = perform_advanced_action(entities)
         else:
             response = "I'm here to assist you."
+
+          # Advanced Functionality
+        if "recipe" in user_input:
+            dish_name = user_input.replace("recipe", "").strip()
+            suggestions = get_recipe_suggestions(dish_name)
+            if suggestions:
+                response = f"Here are some {dish_name} recipe suggestions: {', '.join(suggestions)}"
+            else:
+                response = f"Sorry, I don't have recipe suggestions for {dish_name}."
+        elif "account balance" in user_input:
+            account_type = user_input.replace("account balance", "").strip()
+            balance = get_account_balance(account_type)
+            response = f"Your {account_type} account balance is {balance}."
+        elif "track expenses" in user_input:
+            # Parse expense_type and amount from user_input
+            expense_type = "groceries"  # Example
+            amount = 50.0  # Example
+            track_expenses(expense_type, amount)
+            response = f"Expense of ${amount} for {expense_type} has been tracked."
+        # Add more advanced features similarly
+        elif "track exercise" in user_input:
+            exercise_type = "running"  # Example
+            duration = "30 minutes"  # Example
+            track_exercise_routines(exercise_type, duration)
+            response = f"Great job on your {exercise_type} exercise for {duration}!"
+        else:
+            response = "I didn't catch that. Can you please repeat?"
 
         # Regular Voice Assistant Functionality
         if "exit" in user_input:
