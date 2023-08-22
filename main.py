@@ -1,12 +1,21 @@
 import os
 import torch
 import speech_recognition as sr
+import openai
+from api_keys import (
+    GOOGLE_CUSTOM_SEARCH_KEY,
+    OPENWEATHERMAP_KEY,
+    NEWS_API_KEY,
+    # ... Other imported keys
+)
+from config.config import OPENAI_API_KEY
 from intents import get_intent
 from models.davinci_model import DavinciModel
 from models.function_model import FunctionModel
 from models.llama_model import LlamaModel
 from models.curie_model import CurieModel
 from models.retriever_model import RetrieverModel
+from tool_llm import LLMModel  # Adjust the import statement for the LLM model
 from knowledge import KnowledgeGraph
 from calendar import Calendar
 from translator import translate
@@ -19,12 +28,6 @@ from advanced_nlp import extract_entities
 from advanced_dialog import manage_advanced_dialog
 from email_integration import read_emails
 from messaging_integration import read_messages
-from api_keys import (
-    GOOGLE_CUSTOM_SEARCH_KEY,
-    OPENWEATHERMAP_KEY,
-    NEWS_API_KEY,
-    # ... Other imported keys
-)
 from music_integration import play_music
 from smart_reminders import ReminderManager
 from social_media import post_to_twitter, post_to_facebook, post_to_instagram, post_to_linkedin
@@ -34,11 +37,7 @@ from shopping_assistance import search_products, compare_prices, add_to_cart
 from recipe_suggestions import get_recipe_suggestions
 from personal_finance_tracking import get_account_balance, track_expenses, get_investment_performance
 from health_fitness_tracking import track_exercise_routines, suggest_workouts, provide_health_tips
-from whisper_asr import transcribe_audio
-import tool_llm
-from config.config import OPENAI_API_KEY
-import openai
-
+from whisper_asr import transcribe_audio 
 
 
 # Set your OpenAI API key
