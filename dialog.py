@@ -1,17 +1,34 @@
+"""
+Module to implement the DialogManager class for conversation management.
+"""
+
 class DialogManager:
+    """
+    Class to manage a voice assistant's conversation with the user.
+    """
+
     def __init__(self):
         self.context = {}  # Store conversation context
 
     def start_dialog(self):
-        self.context.clear()  # Clear context at the start of a new dialog
+        """
+        Start a new dialog by clearing the context and initializing user information.
+        """
+        self.context.clear()
         self.context["user_name"] = None
         self.context["user_intent"] = None
 
     def update_context(self, user_input, intent):
+        """
+        Update the conversation context with user input and intent.
+        """
         self.context["user_input"] = user_input
         self.context["user_intent"] = intent
 
     def generate_response(self):
+        """
+        Generate a response based on the user's intent.
+        """
         intent = self.context.get("user_intent")
 
         if intent == "greeting":
@@ -39,4 +56,3 @@ if __name__ == "__main__":
         
         response = dialog_manager.generate_response()
         print("Voice Assistant:", response)
-
