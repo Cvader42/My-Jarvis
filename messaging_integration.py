@@ -1,9 +1,14 @@
-
 import os
 import json
 import requests
 
-def send_message(sender_id, recipient_id, message):
+def get_authentication_token(secret_name):
+  """Gets the authentication token from the environment variable."""
+
+  token = os.environ[secret_name]
+  return token
+
+def send_message(recipient_id, message):
   """Sends a message to the specified recipient."""
 
   # Get the authentication token.
@@ -19,7 +24,7 @@ def send_message(sender_id, recipient_id, message):
 
   # Check the response status code.
   if response.status_code != 200:
-    raise ValueError(f"Failed to send message: {response.status_code}")
+    raise requests.HTTPError(f"Failed to send message: {response.status_code}")
 
 def get_messages(sender_id, recipient_id):
   """Gets all of the messages between the specified sender and recipient."""
@@ -36,7 +41,7 @@ def get_messages(sender_id, recipient_id):
 
   # Check the response status code.
   if response.status_code != 200:
-    raise ValueError(f"Failed to get messages: {response.status_code}")
+    raise requests.HTTPError(f"Failed to get messages: {response.status_code}")
 
   # Parse the response data.
   messages = json.loads(response.content)["data"]
@@ -59,7 +64,7 @@ def mark_message_as_read(message_id):
 
   # Check the response status code.
   if response.status_code != 200:
-    raise ValueError(f"Failed to mark message as read: {response.status_code}")
+    raise requests.HTTPError(f"Failed to mark message as read: {response.status_code}")
 
 def delete_message(message_id):
   """Deletes the specified message."""
@@ -76,5 +81,6 @@ def delete_message(message_id):
 
   # Check the response status code.
   if response.status_code != 200:
-    raise ValueError(f"Failed to delete message: {response.status_code}")
+    raise requests.HTTPError(f"Failed to delete message: {response.status_code}")
+
 
