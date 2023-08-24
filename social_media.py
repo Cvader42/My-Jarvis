@@ -1,6 +1,3 @@
-"""
-social_media.py
-
 This module contains functions for posting messages and performing actions on various social media platforms.
 """
 
